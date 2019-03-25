@@ -10,25 +10,7 @@ import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 public class test {
 	
-	public static Scanner inputScanner = new Scanner(System.in);
-	// Læser input og returner dette.
-	private static int GetInput() {
-		int Choice = -1;
-		
-		// Læs valg.
-		//try {
-	
-			Choice = inputScanner.nextInt();
-			//inputScanner.close();
-			
-	//	} catch (Exception e) {
-		//	System.out.print("Fejl i læsning af indtastning. Applikationen lukker.");
-			//System.exit(0);
-		//}
-		
-		return Choice;
-		
-	}
+
 	
 	public static void main(String[] args) throws IOException, InterruptedException  {
 		int Choice = -1;
@@ -46,36 +28,30 @@ public class test {
 		System.out.print("Tryk 1 for at hente USB-listen. Tryk 2 for brug af virtual USB. ");
 
 		// Læs input.
-		Choice = GetInput();
+		Choice = Functions.GetUserNumberInput();
 	
 		// Hvis valg 1.
 		if (Choice == 1) {
 			
-			SerialPort[] ports = SerialPort.getCommPorts();
-			
-		
-			System.out.println("Liste:");
-			
-			for (int i = 0; i < ports.length; ++i)
-				System.out.println("   [" + i + "] " + ports[i].getSystemPortName() + ": " + ports[i].getDescriptivePortName() + " - " + ports[i].getPortDescription());
+			Functions.GetUSBList();
 			
 			System.out.print("Vælg skrive-USB: ");
 			
 			// Læs input.
-			USBChoice = GetInput();
-			WriteUSBCOM = ports[USBChoice];	
-				
+			USBChoice = Functions.GetUserNumberInput();;
+			//WriteUSBCOM = ports[USBChoice];	
+		
 			System.out.println("Liste:");
 			
-			for (int i = 0; i < ports.length; ++i)
-				System.out.println("   [" + i + "] " + ports[i].getSystemPortName() + ": " + ports[i].getDescriptivePortName() + " - " + ports[i].getPortDescription());
+			//for (int i = 0; i < ports.length; ++i)
+			//	System.out.println("   [" + i + "] " + ports[i].getSystemPortName() + ": " + ports[i].getDescriptivePortName() + " - " + ports[i].getPortDescription());
 			
 			System.out.print("Vælg læse-USB: ");
 			
 			// Læs input.
-			USBChoice = GetInput();
+			USBChoice = Functions.GetUserNumberInput();
 		//	ReadUSBCOM = SerialPort.getCommPort("/dev/ttys002");
-			ReadUSBCOM = ports[USBChoice];	
+			//ReadUSBCOM = ports[USBChoice];	
 	
 			
 		}
