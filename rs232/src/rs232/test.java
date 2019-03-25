@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import java.util.concurrent.ThreadLocalRandom;
 public class test {
+	
 	public static Scanner inputScanner = new Scanner(System.in);
 	// Læser input og returner dette.
 	private static int GetInput() {
@@ -41,7 +42,7 @@ public class test {
 			
 		//socat -d -d pty,raw,echo=0 pty,raw,echo=0
 		
-		
+		System.out.println("Tryk 1 for at skrive. Tryk 2 for at læse. Tryk 2 for brug af virtual USB. ");
 		System.out.print("Tryk 1 for at hente USB-listen. Tryk 2 for brug af virtual USB. ");
 
 		// Læs input.
@@ -112,7 +113,7 @@ public class test {
 	    WriteUSBCOM.setBaudRate(9600);
 	    
 
-	    
+	  
 		// Tilføj et event for 1. serilport når der er data på linjen.
 		ReadUSBCOM.addDataListener(new SerialPortDataListener() {
 			   @Override
@@ -134,7 +135,16 @@ public class test {
 			   }
 			});
 		
-		
+	      // Kør fra 0 til 5.
+	      for (Integer i = 0; i < 30; ++i) {     
+	    	  	
+	    	  System.out.println("Vent...");
+	        // Vent i 2 sek.
+	        Thread.sleep(500);
+	        
+	      
+	      }
+	      System.exit(0);
 	    // Hvis 2. serielport er åbent.
 	    if (WriteUSBCOM.isOpen() && ReadUSBCOM.isOpen()) {
 	    	
