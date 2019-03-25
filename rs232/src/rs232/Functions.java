@@ -28,17 +28,17 @@ public class Functions {
 		
 	};
 	
-	// Henter USB serielliste.
-	public static void GetUSBList() {
-		SerialPort[] ports = SerialPort.getCommPorts();
+	public static int ChooseUSB() {
 		
+		// Hent alle den komplete USB-liste.
+		Serial.GetUSBList();
 		
-		System.out.println("Liste:");
+		// Skriv output.
+		System.out.print("Vælg nummer: ");
 		
-		for (int i = 0; i < ports.length; ++i)
-			System.out.println("   [" + i + "] " + ports[i].getSystemPortName() + ": " + ports[i].getDescriptivePortName() + " - " + ports[i].getPortDescription());
+		return Functions.GetUserNumberInput();
 		
-	};
+	}
 	
 
 }
