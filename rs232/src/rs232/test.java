@@ -136,7 +136,7 @@ public class test {
 		
 		
 	    // Hvis 2. serielport er åbent.
-	    if (WriteUSBCOM.isOpen() && ReadUSBCOM.isOpen()) {
+	    if (WriteUSBCOM.isOpen()) {
 	    	
 	    	
 			WriteUSBCOM.setComPortParameters(9600, 8, 1, 0); 
