@@ -34,7 +34,7 @@ public class Functions {
 		Serial.GetUSBList();
 		
 		// Skriv output.
-		System.out.print("Vælg nummer: ");
+		System.out.print("Vaelg nummer: ");
 		
 		return Functions.GetUserNumberInput();
 		
