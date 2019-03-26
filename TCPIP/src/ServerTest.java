@@ -35,7 +35,7 @@ public class ServerTest {
         return this.server.getLocalPort();
     }
     public static void main(String[] args) throws Exception {
-    	ServerTest app = new ServerTest("");
+    	ServerTest app = new ServerTest("10.10.0.80");
         System.out.println("\r\nRunning Server: " + 
                 "Host=" + app.getSocketAddress().getHostAddress() + 
                 " Port=" + app.getPort());

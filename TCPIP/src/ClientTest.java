@@ -23,9 +23,11 @@ public class ClientTest {
     }
     
     public static void main(String[] args) throws Exception {
+    	String ipAdress = args[0];
+    	String port = args[1];
     	ClientTest client = new ClientTest(
-                InetAddress.getByName("192.168.1.6"), 
-                Integer.parseInt("52994"));
+                InetAddress.getByName(ipAdress), 
+                Integer.parseInt(port));
         
         System.out.println("\r\nConnected to Server: " + client.socket.getInetAddress());
         client.start();                
